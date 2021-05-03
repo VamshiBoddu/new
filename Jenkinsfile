@@ -22,6 +22,7 @@ pipeline {
         }
         stage('deploy artifacts'){
             steps{
+                script{
                 def server = Artifactory.server 'myjfrog'
                 def uploadSpec = """{
                     "files":[
@@ -36,5 +37,5 @@ pipeline {
                 }
             }
         }
-    
+    }
 }
