@@ -3,7 +3,7 @@
   remote_user: root
 
   tasks:
-    - name:to logon to ECR
+    - name: to logon to ECR
       shell: $(aws ecr get-login --no-include-email)
 
     - name: to pull images from ECR
