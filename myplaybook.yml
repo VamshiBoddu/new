@@ -4,7 +4,7 @@
 
   tasks:
     - name:to logon to ECR
-      shell: $(aws ecr get-login --no-include-email)
+      shell: (aws ecr get-login --no-include-email)
 
     - name: to pull images from ECR
       shell: docker pull 796419576504.dkr.ecr.us-east-2.amazonaws.com/app1:latest
