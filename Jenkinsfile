@@ -37,5 +37,24 @@ pipeline {
                 }
             }
         }
+        stage('build docker image'){
+        steps{
+            echo 'build docker image'
+            sh 'docker build -t app:1'
+         }
+        }
+        stage('login to ECR'){
+        steps{
+            echo 'login to ECR'
+            sh '$(aws ecr get-login --no-include-email)'
+        }
+        }
+       stage('push to ECR'){
+        steps{
+            echo 'push to ECR'
+            sh 'docker tag app:1 796419576504.dkr.ecr.us-east-2.amazonaws.com/app1:latest'
+            sh 'docker push 796419576504.dkr.ecr.us-east-2.amazonaws.com/app1:latest'
+        }
+        }
     }
 }
