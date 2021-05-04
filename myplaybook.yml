@@ -1,0 +1,13 @@
+- name: to pull images from ECR and start docker containers
+  hosts: allslaves
+  remote_user: root
+
+  tasks:
+    - name:to logon to ECR
+      shell: $(aws ecr get-login --no-include-email)
+
+    - name: to pull images from ECR
+      shell: 796419576504.dkr.ecr.us-east-2.amazonaws.com/app1:latest
+
+    - name: to start docker containers
+      shell: docker run --name con -itd -p 8080:8080 796419576504.dkr.ecr.us-east-2.amazonaws.com/app1:latest
