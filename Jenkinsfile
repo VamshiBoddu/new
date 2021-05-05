@@ -28,7 +28,7 @@ pipeline {
                     "files":[
                         {
                             "pattern": "/var/lib/jenkins/.m2/repository/com/abc/mvn-hello-world/1.5/mvn-hello-world-1.5.war",
-                            "target": "sageit/"
+                            "target": "elxr/"
                         }
                     ]
                 }"""
