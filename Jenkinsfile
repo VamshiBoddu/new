@@ -52,8 +52,8 @@ pipeline {
        stage('push to ECR'){
         steps{
             echo 'push to ECR'
-            sh 'docker tag app:1 796419576504.dkr.ecr.us-east-2.amazonaws.com/app1:latest'
-            sh 'docker push 796419576504.dkr.ecr.us-east-2.amazonaws.com/app1:latest'
+            sh 'docker tag app:1 796419576504.dkr.ecr.us-east-2.amazonaws.com/myapp:latest'
+            sh 'docker push 796419576504.dkr.ecr.us-east-2.amazonaws.com/myapp:latest'
         }
         }
         stage('ping and execute playbook'){
