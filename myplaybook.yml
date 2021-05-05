@@ -9,5 +9,11 @@
     - name: to pull images from ECR
       shell: docker pull 796419576504.dkr.ecr.us-east-2.amazonaws.com/myapp:latest
 
+    - name: to stop running container
+      shell: docker stop con
+
+    - name: to remove stopped container
+      shell: docker rm con
+
     - name: to start docker containers
       shell: docker run --name con -itd -p 8080:8080 796419576504.dkr.ecr.us-east-2.amazonaws.com/myapp:latest
