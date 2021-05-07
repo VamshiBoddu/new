@@ -64,5 +64,17 @@ pipeline {
                 sh 'ansible-playbook myplaybook.yml' 
             }
         }
+        stage('apply deployment file'){
+            steps{
+                echo 'applying deployment file to eks cluster'
+                sh 'kubectl apply -f deployment.yml'
+            }
+        }
+        stage('apply service file'){
+            steps{
+                echo 'applying service file to eks cluster'
+                sh 'kubectl apply -f service.yml'
+            }
+        }
     }
 }
